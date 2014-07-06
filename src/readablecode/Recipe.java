@@ -15,17 +15,43 @@ public class Recipe {
     }
     
     private void run(String[] args) {
-        if(args.length!=1){
+        if(args.length<=0||args.length>=2){
             System.err.println("Wrong argument. Stop.");
             return;
         }
+        int id = 0;
         String fileName = args[0];
         File file = new File(fileName);
         if(!file.exists()){
             System.err.println("File does not exist. Stop.");
             return;
         }
-        printRecipe(file);
+        if(args.length==1){
+            printRecipe(file);
+        }else if(args.length==2&&isInt(args[1])){
+            id = Integer.parseInt(args[1]);
+            printRecipe(file,id);
+        }else{
+            //If reached here, args[1] is not integer.
+            System.err.println("Wrong argument. Stop.");
+        }
+    }
+
+
+    private boolean isInt(String string) {
+        try{
+            Integer.parseInt(string);
+        }catch(Exception e){
+            //NumberFormatException and NullPointerException are considered.
+            return false;
+        }
+        return true;
+    }
+
+    private void printRecipe(File file, int id) {
+        //TODO implement printing method when id is specified.
+        //めっちゃ途中で終わっちゃいました！！すいません！！！！
+        
     }
 
     private static void printRecipe(File file){
