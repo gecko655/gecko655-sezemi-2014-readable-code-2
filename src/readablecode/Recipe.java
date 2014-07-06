@@ -1,11 +1,10 @@
 package readablecode;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStreamReader;
+import java.util.Scanner;
 
 public class Recipe {
 
@@ -21,16 +20,20 @@ public class Recipe {
             System.err.println("File does not exist. Stop.");
             return;
         }
+        printRecipe(file);
+    }
+    
+    private static void printRecipe(File file){
         try {
-            BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
-            System.out.println(reader.readLine());
-            reader.close();
+            Scanner scanner = new Scanner(new FileInputStream(file));
+            if(scanner.hasNext()){
+                System.out.println(scanner.next());
+            }
+            scanner.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
         }
+        
     }
 
 }
