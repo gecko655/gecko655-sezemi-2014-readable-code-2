@@ -10,6 +10,11 @@ public class Recipe {
 
 
     public static void main(String[] args) {
+        Recipe recipe = new Recipe();
+        recipe.run(args);
+    }
+    
+    private void run(String[] args) {
         if(args.length!=1){
             System.err.println("Wrong argument. Stop.");
             return;
@@ -22,7 +27,7 @@ public class Recipe {
         }
         printRecipe(file);
     }
-    
+
     private static void printRecipe(File file){
         try {
             Scanner scanner = new Scanner(new FileInputStream(file));
