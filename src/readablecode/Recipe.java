@@ -31,8 +31,8 @@ public class Recipe {
     private static void printRecipe(File file){
         try {
             Scanner scanner = new Scanner(new FileInputStream(file));
-            while(scanner.hasNext()){
-                System.out.println(scanner.next());
+            for(int id=1;scanner.hasNext();id++){
+                System.out.println(id+": "+scanner.next());
             }
             scanner.close();
         } catch (FileNotFoundException e) {
