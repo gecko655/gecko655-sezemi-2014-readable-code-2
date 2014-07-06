@@ -11,7 +11,12 @@ public class Recipe {
 
 
     public static void main(String[] args) {
-        File file = new File("recipe-data.txt");
+        if(args.length!=1){
+            System.err.println("Wrong argument. Stop.");
+            return;
+        }
+        String fileName = args[0];
+        File file = new File(fileName);
         if(!file.exists()){
             System.err.println("File does not exist. Stop.");
             return;
