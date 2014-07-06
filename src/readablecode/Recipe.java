@@ -31,7 +31,7 @@ public class Recipe {
     private static void printRecipe(File file){
         try {
             Scanner scanner = new Scanner(new FileInputStream(file));
-            if(scanner.hasNext()){
+            while(scanner.hasNext()){
                 System.out.println(scanner.next());
             }
             scanner.close();
