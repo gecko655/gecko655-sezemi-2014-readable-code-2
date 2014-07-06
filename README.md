@@ -12,10 +12,3 @@ Java
 
 Eclipseにimportした後、src/readablecode/Recipe.javaをrunしてください。
 
-コマンドライン上では、
-
-    $ cd path/to/gecko655-sezemi-2014-readable-code-2/src/
-    $ javac readablecode/Recipe.java
-    $ java readablecode/Recipe
-
-とすれば実行できます。
